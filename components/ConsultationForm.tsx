@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const CONCERNS = [
   "Trying to conceive naturally",
@@ -17,9 +18,12 @@ const CONCERNS = [
 type Status = "idle" | "success" | "error";
 
 export default function ConsultationForm() {
+  const router = useRouter();
   const [phone, setPhone] = useState("");
   const [phoneError, setPhoneError] = useState("");
   const [status, setStatus] = useState<Status>("idle");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   function handlePhoneChange(e: React.ChangeEvent<HTMLInputElement>) {
     const digits = e.target.value.replace(/\D/g, "").slice(0, 10);
@@ -27,8 +31,11 @@ export default function ConsultationForm() {
     if (phoneError) setPhoneError("");
   }
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (isSubmitting) return;
+    setStatus("idle");
+    setSubmitError("");
 
     if (phone.length !== 10) {
       setPhoneError(
@@ -40,9 +47,36 @@ export default function ConsultationForm() {
       return;
     }
 
-    setStatus("success");
-    e.currentTarget.reset();
-    setPhone("");
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch("/api/submissions", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          source: "Hero Consultation Form",
+          name: formData.get("ivf-name"),
+          phone,
+          concern: formData.get("ivf-concern"),
+          location: formData.get("ivf-location"),
+          pageUrl: window.location.href,
+        }),
+      });
+      const result = await response.json();
+      if (!response.ok || result.success !== true) {
+        throw new Error(result.error || "Unable to submit. Please try again.");
+      }
+      router.push("/thank-you");
+    } catch (error) {
+      setStatus("error");
+      setSubmitError(
+        error instanceof Error ? error.message : "Unable to submit. Please try again."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -148,13 +182,20 @@ export default function ConsultationForm() {
 
         <button
           type="submit"
+          disabled={isSubmitting}
           className="col-span-full mt-2 w-full rounded-full bg-[#e8278d] px-6 py-4 text-sm font-bold tracking-[0.075em] text-white uppercase shadow-[0_14px_30px_rgba(232,39,141,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#bd1d72] hover:shadow-[0_18px_40px_rgba(232,39,141,0.34)]"
         >
-          Book Your Free Consultation
+          {isSubmitting ? "Submitting..." : "Book Your Free Consultation"}
         </button>
 
+        {submitError && (
+          <p role="alert" className="col-span-full text-center text-sm font-medium text-[#ffd1dc]">
+            {submitError}
+          </p>
+        )}
+
         {status === "success" && (
-          <p className="col-span-full rounded-xl bg-[#c9f7d5]/12 px-4 py-2 text-center text-sm font-medium text-[#c9f7d5]">
+          <p role="status" className="col-span-full rounded-xl bg-[#c9f7d5]/12 px-4 py-2 text-center text-sm font-medium text-[#c9f7d5]">
             Thank you! Our fertility team will reach out to you shortly.
           </p>
         )}
