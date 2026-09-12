@@ -1,7 +1,7 @@
 // Open your Google Sheet, then go to Extensions > Apps Script, paste this
 // file in, and deploy as a Web app. Because this script is opened from
 // inside the Sheet, it's bound to that Sheet automatically — no ID needed.
-const SHEET_NAME = 'Submissions';
+const SHEET_NAME = 'Embryonic Fertility Leads';
 const HEADERS = ['Timestamp', 'Source', 'Name', 'Phone', 'Concern', 'Location', 'URL', 'TeleCRM'];
 
 function doGet() {
