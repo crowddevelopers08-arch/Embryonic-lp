@@ -183,7 +183,7 @@ export default function ConsultationForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="col-span-full mt-2 w-full rounded-full bg-[#e8278d] px-6 py-4 text-sm font-bold tracking-[0.075em] text-white uppercase shadow-[0_14px_30px_rgba(232,39,141,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#bd1d72] hover:shadow-[0_18px_40px_rgba(232,39,141,0.34)]"
+          className="col-span-full mt-2 w-full whitespace-nowrap rounded-full bg-[#e8278d] px-6 max-sm:px-3 py-4 text-sm max-sm:text-[12px] font-bold tracking-[0.075em] max-sm:tracking-normal text-white uppercase shadow-[0_14px_30px_rgba(232,39,141,0.28)] transition-all hover:-translate-y-0.5 hover:bg-[#bd1d72] hover:shadow-[0_18px_40px_rgba(232,39,141,0.34)]"
         >
           {isSubmitting ? "Submitting..." : "Book Your Free Consultation"}
         </button>
