@@ -13,41 +13,16 @@ export const metadata: Metadata = {
   title: "Embryonic Fertility and IVF Centre Pune",
   icons: {
     icon: [
-      {
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "any",
-      },
-      {
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "16x16",
-        type: "image/png",
-      },
-      {
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "32x32",
-        type: "image/png",
-      },
+      { url: "/Fevicon-design.jpg.webp", sizes: "any" },
+      { url: "/Fevicon-design.jpg.webp", sizes: "16x16", type: "image/png" },
+      { url: "/Fevicon-design.jpg.webp", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      {
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "180x180",
-        type: "image/png",
-      },
+      { url: "/Fevicon-design.jpg.webp", sizes: "180x180", type: "image/png" },
     ],
     other: [
-      {
-        rel: "icon",
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "192x192",
-        type: "image/png",
-      },
-      {
-        rel: "icon",
-        url: "/Fevicon-design.jpg.webp",
-        sizes: "512x512",
-        type: "image/png",
-      },
+      { rel: "icon", url: "/Fevicon-design.jpg.webp", sizes: "192x192", type: "image/png" },
+      { rel: "icon", url: "/Fevicon-design.jpg.webp", sizes: "512x512", type: "image/png" },
     ],
   },
 };
@@ -56,6 +31,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${lexend.variable} scroll-smooth`}>
       <head>
+        {/* Google Ads (gtag.js) — beforeInteractive so crawler detects it */}
+        <Script
+          id="google-ads"
+          strategy="beforeInteractive"
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17729942778"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17729942778');
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script
           id="gtm-script"
@@ -75,21 +65,6 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             `,
           }}
         />
-
-        {/* Google Ads (gtag.js) */}
-        <Script
-          id="google-ads"
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=AW-17729942778"
-        />
-        <Script id="google-ads-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-17729942778');
-          `}
-        </Script>
 
         {/* Microsoft Clarity */}
         <Script id="microsoft-clarity" strategy="afterInteractive">
