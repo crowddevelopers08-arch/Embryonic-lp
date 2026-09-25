@@ -94,7 +94,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         </Script>
       </head>
       <body className="min-h-screen bg-white font-[family-name:var(--font-lexend)] text-[#2c1d27] antialiased">
-        {/* Google Tag Manager (noscript) */}
+        {/* Google Tag Manager(noscript) */}
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-W92Z5PSP"
