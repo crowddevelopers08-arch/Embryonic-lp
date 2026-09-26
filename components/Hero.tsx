@@ -39,7 +39,7 @@ export default function Hero() {
               {AVATARS.map((n) => (
                 <Image
                   key={n}
-                  src={`https://embryonicfertility.com/wp-content/uploads/2026/06/${n}.png`}
+                  src={`/images/hero/avatar-${n}.png`}
                   alt=""
                   width={44}
                   height={44}
@@ -63,7 +63,7 @@ export default function Hero() {
               aria-hidden
             />
             <Image
-              src="https://embryonicfertility.com/wp-content/uploads/2026/06/Untitled-design-2026-06-15T112839.563.png"
+              src="/images/hero/hero-patient.png"
               alt="Happy patient at Embryonic Fertility & IVF Centre"
               width={520}
               height={640}

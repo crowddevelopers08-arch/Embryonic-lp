@@ -5,7 +5,7 @@ export default function Footer() {
     <footer className="w-full bg-white">
       <div className="mx-auto w-[min(100%-32px,1350px)] py-10 text-center">
         <Image
-          src="https://embryonicfertilityivf.com/wp-content/uploads/2026/06/logo-1.png"
+          src="/images/brand/logo-footer.png"
           alt="Embryonic Fertility & IVF Centre"
           width={494}
           height={162}

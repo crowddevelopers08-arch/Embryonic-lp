@@ -106,7 +106,7 @@ export default function AwardsCarousel() {
               className="h-[190px] w-[210px] flex-none overflow-hidden rounded-2xl border-2 border-[#e8278d]/25 bg-white shadow-[0_10px_28px_rgba(121,62,93,0.08)] sm:h-[280px] sm:w-[240px]"
             >
               <Image
-                src={`https://embryonicfertilityivf.com/wp-content/uploads/2026/06/${file}`}
+                src={`/images/awards/${file}`}
                 alt="Award and certification"
                 width={280}
                 height={220}

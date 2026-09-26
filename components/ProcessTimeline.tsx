@@ -3,31 +3,31 @@ import Image from "next/image";
 const STEPS = [
   {
     title: "Consultation & Tests",
-    icon: "https://embryonicfertility.com/wp-content/uploads/2025/07/Consultation-Tests.webp",
+    icon: "/images/process/Consultation-Tests.webp",
     description:
       "We begin with an in-depth consultation and fertility tests to understand your specific challenges and plan your personalized treatment.",
   },
   {
     title: "Ovarian Stimulation & Egg Retrieval",
-    icon: "https://embryonicfertility.com/wp-content/uploads/2025/07/Ovarian-Stimulation-Egg-Retrieval.webp",
+    icon: "/images/process/Ovarian-Stimulation-Egg-Retrieval.webp",
     description:
       "Fertility medications help stimulate the ovaries. Once mature, eggs are collected through a safe, minimally invasive procedure.",
   },
   {
     title: "Fertilization in the Lab",
-    icon: "https://embryonicfertility.com/wp-content/uploads/2025/07/Fertilization-in-the-Lab.webp",
+    icon: "/images/process/Fertilization-in-the-Lab.webp",
     description:
       "Collected eggs are combined with sperm in our advanced lab. Once fertilized, the embryos are carefully monitored and selected.",
   },
   {
     title: "Embryo Transfer",
-    icon: "https://embryonicfertility.com/wp-content/uploads/2025/07/Embryo-Transfer.webp",
+    icon: "/images/process/Embryo-Transfer.webp",
     description:
       "A healthy embryo is gently transferred into the uterus. The procedure is quick, painless, and does not require anesthesia.",
   },
   {
     title: "Pregnancy Test & Follow-Up",
-    icon: "https://embryonicfertility.com/wp-content/uploads/2025/07/Pregnancy-Test-Follow-Up.webp",
+    icon: "/images/process/Pregnancy-Test-Follow-Up.webp",
     description:
       "After about 12–14 days, we do a pregnancy test. If positive, we continue with prenatal care and support your journey every step of the way.",
   },

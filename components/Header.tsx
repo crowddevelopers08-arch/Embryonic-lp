@@ -5,7 +5,7 @@ export default function Header() {
     <header className="w-full bg-white">
       <div className="mx-auto flex w-[min(100%-32px,1350px)] items-center justify-between gap-4 py-6">
         <Image
-          src="https://embryonicfertilityivf.com/wp-content/uploads/2026/06/image-removebg-preview-15.png"
+          src="/images/brand/logo-header.png"
           alt="Embryonic Fertility & IVF Centre"
           width={494}
           height={162}

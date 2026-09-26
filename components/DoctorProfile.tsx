@@ -29,7 +29,7 @@ export default function DoctorProfile() {
             <span className="absolute top-0 left-0 z-10 h-full w-1.5 rounded-l-2xl bg-[#e8278d]" />
             <div className="overflow-hidden rounded-2xl bg-white shadow-[0_20px_50px_rgba(121,62,93,0.12)]">
               <Image
-                src="https://embryonicfertility.com/wp-content/uploads/2025/07/Untitled-design-7-1.webp"
+                src="/images/doctor/doctor.webp"
                 alt="Dr. Nikhil Gosavi"
                 width={420}
                 height={520}
